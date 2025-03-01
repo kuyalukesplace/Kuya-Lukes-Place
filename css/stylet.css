@@ -1,0 +1,80 @@
+* {
+    cursor: var(--cursor) !important;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    line-height: 1.5;
+    background: hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 20%);
+    font-weight: 300;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar-brand {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.logo-img {
+    width: 50px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.container {
+    width: 600px;
+    max-width: calc(100% - (140px + 0.5rem));
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* Centers h1 and p */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #323232;
+    margin-bottom: 10px; /* Adds space between h1 and p */
+}
+
+
+p {
+    font-size: 1rem;
+    color: hsl(0, 0%, 30%);
+    margin-bottom: 20px; /* Ensures space before h2 */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}

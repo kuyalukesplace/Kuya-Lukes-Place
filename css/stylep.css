@@ -1,0 +1,117 @@
+ * {
+    cursor: var(--cursor) !important;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    font-family: sans-serif;
+    background: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 20%);
+    font-weight: 300;
+    overflow: auto;
+    cursor: var(--cursor) !important;
+  }
+  
+  main {
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  
+  
+  article {
+    width: 600px;
+    max-width: calc(100% - (140px + 0.5rem));
+    padding: 0 1rem;
+    overflow: hidden;
+    
+  }
+  
+  @media (min-width: 992px) {
+    article {
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+  
+  h1 {
+    line-height: 1;
+    font-size: 3rem;
+  }
+  
+  h1 span {
+    display: block;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    font-size: 1rem;
+    opacity: 0.65;
+  }
+  
+  .logo {
+    text-align: center; /* Center the logo */
+    margin-bottom: 20px; /* Space between logo and content */
+}
+
+
+.logo img {
+    width: 150px; /* Adjust size */
+    height: auto;
+   
+    display: block;
+    margin: 0 auto; /* Centers the image inside the container */
+}
+  
+  footer {
+    height: 100vh;
+    text-align: right;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 50%;
+    margin-left: 500px;
+
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    
+}
+
+.button:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+  
