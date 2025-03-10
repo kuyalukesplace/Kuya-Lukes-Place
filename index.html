@@ -101,131 +101,156 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-5 fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
-                                <div class="ticket-form p-5"> 
-                                    <h2 class="text-dark text-uppercase mb-4" style="font-weight: bold;">BOOK NOW</h2>
-                                    <form action="https://api.web3forms.com/submit" method="POST">
-                                        <!-- Web3Forms Access Key -->
-                                        <input type="hidden" name="access_key" value="d1cb4a45-dca5-47d5-bb25-4744b9df69f2">
-                                
-                                        <div class="row g-4">
-                                            <div class="col-12">
-                                                <input type="text" class="form-control border-0 py-2" name="name" placeholder="Your Name" required>
-                                            </div>
-                                            <div class="col-12 col-xl-6">
-                                                <input type="email" class="form-control border-0 py-2" name="email" placeholder="Your Email" required>
-                                            </div>
-                                            <div class="col-12 col-xl-6">
-                                                <input type="tel" class="form-control border-0 py-2" name="phone" placeholder="Phone" required onkeypress="return isNumber(event)">
-                                            </div>
-                                            
-                                            <script>
-                                            function isNumber(evt) {
-                                                var charCode = evt.which ? evt.which : evt.keyCode;
-                                                if (charCode < 48 || charCode > 57) {
-                                                    return false; // Prevents non-numeric characters
-                                                }
-                                                return true;
-                                            }
-                                            </script>
-                                            
-                                            <div class="col-12">
-                                                <select class="form-select border-0 py-2" name="package" required>
-                                                    <option value="" selected disabled>Select Packages</option>
-                                                    <option value="DAYTOUR">DAYTOUR</option>
-                                                    <option value="OVERNIGHT">OVERNIGHT</option>
-                                                    <option value="NIGHT TOUR">NIGHT TOUR</option>
-                                                    <option value="ALL IN">ALL IN</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                
-                                                
-                                           <p class="add" style="margin-right: 80%; color: #666;">ADD-ONS</p>
-                                           <div class="form-control border-0 py-2 ">
-                                            
-                                            <input type="checkbox" name="ADD-ONS" value="ROOM 1"> ROOM 1
-                                            <input type="checkbox" name="ADD-ONS" value="ROOM 2"> ROOM 2
-                                            <br>
-                                            <input type="checkbox" name="ADD-ONS" value="KTV"> KTV
-                                           
-                                            <input type="checkbox" name="ADD-ONS" value="PROPANE TANK"> PROPANE TANK
-
-                                           </div>
-                                               
-                                                   
-                                                </select>
-                                            </div>
-                         
-                                            <div class="col-12">
-                                                <input class="form-control border-0 py-2" type="date" name="date" id="datePicker" required>
-                                            </div>
-                                            
-                                            <script>
-                                                function updateDatePicker() {
-                                                    let today = new Date().toISOString().split("T")[0]; 
-                                                    document.getElementById("datePicker").setAttribute("min", today);
-                                                }
-                                            
-                                                // Tawagin agad kapag nagload ang page
-                                                document.addEventListener("DOMContentLoaded", updateDatePicker);
-                                            
-                                                // I-update ang min date araw-araw
-                                                setInterval(updateDatePicker, 1000 * 60 * 60 * 24); // Update kada 24 oras
-                                            </script>
-                                            
-                                            
-                                            <div class="col-12">
-                                                <select class="form-control border-0 py-2" id="number" required>
-                                                    <option value="" disabled selected>Select number of guests</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                    <option value="13">13</option>
-                                                    <option value="14">14</option>
-                                                    <option value="15">15</option>
-                                                    <option value="16">16</option>
-                                                    <option value="17">17</option>
-                                                    <option value="18">18</option>
-                                                    <option value="19">19</option>
-                                                    <option value="20">20</option>
-                                                </select>
-                                            </div>
-                                            
-                                            <script>
-                                                document.getElementById('number').addEventListener('change', function() {
-                                                    const value = parseInt(this.value);
-                                                    if (value > 20) {
-                                                        alert('Maximum number of guests is 15');
-                                                        this.value = 20; // Reset to 15 if a value above it is selected
-                                                    }
-                                                });
-                                            </script>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary w-100 py-2 px-5">Book Now</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
+                          <div class="booking-container">
+    <h2 class="text-center text-uppercase mb-4">Book Now</h2>
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d1cb4a45-dca5-47d5-bb25-4744b9df69f2">
+        
+        <div class="mb-3">
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
         </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+            <input type="tel" class="form-control" name="phone" placeholder="Phone" required onkeypress="return isNumber(event)">
+        </div>
+        
+        <div class="mb-3">
+            <select class="form-select" id="packageSelect" name="package" required>
+                <option value="" selected disabled>Select Package</option>
+                <option value="DAYTOUR" data-price="4488">DAYTOUR - ₱4,488</option>
+                <option value="OVERNIGHT" data-price="5488">OVERNIGHT - ₱5,488</option>
+                <option value="NIGHT TOUR" data-price="2888">NIGHT TOUR - ₱2,888</option>
+                <option value="SUPER ALL-IN" data-price="17488">SUPER ALL-IN - ₱17,488</option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label class="fw-bold" style="color: black;">Add-ons</label>
+            <div class="form-check">
+                <input class="form-check-input addon" type="checkbox" value="1998" data-name="1 ROOM"><span style="color: black;">1 Room - ₱1,998</span> 
+            </div>
+            <div class="form-check">
+                <input class="form-check-input addon" type="checkbox" value="3988" data-name="2 ROOMS"><span style="color: black;"> 2 Rooms - ₱3,988</span> 
+            </div>
+            <div class="form-check">
+                <input class="form-check-input addon" type="checkbox" value="1488" data-name="KTV"><span style="color: black;">  KTV - ₱1,488</span>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input addon" type="checkbox" value="400" data-name="PROPANE TANK"> <span style="color: black;"> Propane Tank - ₱400</span>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <input class="form-control" type="date" name="date" id="datePicker" required>
+        </div>
+        
+        <div class="mb-3">
+            <select class="form-select" id="number" name="guests" required>
+                <option value="" disabled selected>Number of Guests</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        
+        <div class="mb-3 total-container">
+            <span>Total:</span>
+            <input type="text" class="total-input" id="totalAmount" placeholder="₱0.00" readonly>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+</div>
+
+<script>
+    function isNumber(evt) {
+        var charCode = evt.which ? evt.which : evt.keyCode;
+        return !(charCode < 48 || charCode > 57);
+    }
+    
+    function updateDatePicker() {
+        let today = new Date().toISOString().split("T")[0]; 
+        document.getElementById("datePicker").setAttribute("min", today);
+    }
+    document.addEventListener("DOMContentLoaded", updateDatePicker);
+    setInterval(updateDatePicker, 1000 * 60 * 60 * 24);
+    
+    function updateTotal() {
+        let total = 0;
+        let packageSelect = document.getElementById("packageSelect");
+        let selectedPackage = packageSelect.options[packageSelect.selectedIndex];
+        
+        if (selectedPackage && selectedPackage.dataset.price) {
+            total += parseFloat(selectedPackage.dataset.price);
+        }
+        
+        document.querySelectorAll(".addon:checked").forEach(addon => {
+            total += parseFloat(addon.value);
+        });
+        
+        document.getElementById("totalAmount").value = `₱${total.toLocaleString()}`;
+    }
+    
+    document.getElementById("packageSelect").addEventListener("change", updateTotal);
+    document.querySelectorAll(".addon").forEach(checkbox => {
+        checkbox.addEventListener("change", updateTotal);
+    });
+</script>
+
+<style>
+    .booking-container {
+        width: 100%;
+        max-width: 400px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .total-container {
+        display: flex;
+        justify-content: space-between;
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #007bff;
+    }
+    .btn-primary {
+        
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+</style>
+
         <!-- Carousel End -->
 </section> 
         
+<style>
+   {content: "\f105";
+    margin: 212px;
+    margin-right: 10px;
+    margin-left: -14px;}
+    </style>
+
 
         <!-- Feature Start -->
         <div class="container-fluid feature py-5">
@@ -667,9 +692,8 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <!-- Team End -->
 
-
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial py-5">
+           <!-- Testimonial Start -->
+           <div class="container-fluid testimonial py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary" style="color: white;">Testimonials</h4>
@@ -678,7 +702,7 @@
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
                     <div class="testimonial-item p-4">
-                        <p class="text-white fs-4 mb-4">SOLID 💯 Come and Visit na po tayo dito 
+                        <p class="text-white fs-4 mb-4">SOLID 💯 Come and Visit na po tayo dito ✨
                             Family-friendly.
                         </p>
                         <div class="testimonial-inner">
@@ -688,7 +712,7 @@
                                 </div>
                             </div>
                             <div class="ms-4">
-                                <h4 class="mb-0" style="font-weight: bold;">Lars Stynn Ona</h4>
+                                <h4>Lars Stynn Ona</h4>
                             
                                 <div class="d-flex text-primary">
                                     <i class="fas fa-star" style="color: gold;"></i>
@@ -711,13 +735,13 @@
                                 </div>
                             </div>
                             <div class="ms-4">
-                                <h4 class="mb-0" style="font-weight: bold;">Luis Miguel Soriano</h4>
+                                <h4>Luis Miguel Soriano</h4>
                                                     <div class="d-flex text-primary">
-                                    <i class="fas fa-star" style="color: gold;"></i>
-                                    <i class="fas fa-star" style="color: gold;"></i>
-                                    <i class="fas fa-star" style="color: gold;"></i>
-                                    <i class="fas fa-star" style="color: gold;"></i>
-                                    <i class="fas fa-star" style="color: gold;"></i>
+                                                        <i class="fas fa-star" style="color: gold;"></i>
+                                                        <i class="fas fa-star" style="color: gold;"></i>
+                                                        <i class="fas fa-star" style="color: gold;"></i>
+                                                        <i class="fas fa-star" style="color: gold;"></i>
+                                                        <i class="fas fa-star" style="color: gold;"></i>
                                                        
                                 </div>
                             </div>
@@ -734,13 +758,13 @@
                                 </div>
                             </div>
                             <div class="ms-4">
-                                <h4 class="mb-0" style="font-weight: bold;">GRascia Nobleta</h4>
+                                <h4>GRascia Nobleta</h4>
                                                          <div class="d-flex text-primary">
                                     <i class="fas fa-star" style="color: gold;"></i>
                                     <i class="fas fa-star" style="color: gold;"></i>
                                     <i class="fas fa-star" style="color: gold;"></i>
                                     <i class="fas fa-star" style="color: gold;"></i>
-                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;" ></i>
                                    
                                 </div>
                             </div>
@@ -750,7 +774,7 @@
             </div>
         </div>
         <!-- Testimonial End -->
-
+    
         <!-- Footer Start -->
         <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5">
@@ -779,30 +803,30 @@
                     <div class="col-md-6 col-lg-6 col-xl-2">
                         <div class="footer-item">
                             <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="index.html"><i class="fas fa-angle-right me-2"></i> Home</a>
-                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href="service.html"><i class="fas fa-angle-right me-2"></i> Packages</a>
-                            <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Our Gallery</a>
-                            <a href="attraction.html"><i class="fas fa-angle-right me-2"></i> Attractions</a>
-                            <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                            <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact us</a>
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="service.html">Packages</a>
+                            <a href="gallery.html">Our Gallery</a>
+                            <a href="attraction.html">Attractions</a>
+                            <a href="team.html">Our Team</a>
+                            <a href="contact.html">Contact us</a>
                                                    
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-2">
                         <div class="footer-item">
                             <h4 class="text-white mb-4">Support</h4>
-                            <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href="termsandcondition.html"><i class="fas fa-angle-right me-2"></i> Rules</a>
-                            <a href="FAQ.html"><i class="fas fa-angle-right me-2"></i> FAQ</a>
-                           <a href="img/dti.png"><i class="fas fa-angle-right me-2"></i> DTI Registered</a>
-                            <a href="https://www.facebook.com/photo/?fbid=380792924778968&set=pcb.380793544778906" target="_blank"><i class="fas fa-angle-right me-2"></i> LGU Registered</a>
+                            <a href="PrivacyPolicy.html"> Privacy Policy</a>
+                            <a href="termsandcondition.html"> Rules</a>
+                            <a href="FAQ.html"> FAQ</a>
+                            <a href="img/dti.png">DTI Registered</a>
+                            <a href="https://www.facebook.com/photo/?fbid=380792924778968&set=pcb.380793544778906" target="_blank">LGU Registered</a>
                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-item">
-                            <h4 class="text-white mb-4">Opening Hours</h4>
+                            <h4 class="text-white mb-4">Operating Hours</h4>
                             <div class="opening-date mb-3 pb-3">
                                 <div class="opening-clock flex-shrink-0">
                                     <h6 class="text-white mb-0 me-auto">DAYTOUR:</h6>
@@ -834,6 +858,7 @@
             </div>
         </div>
         <!-- Footer End -->
+      
         
         <!-- Copyright Start -->
         <div class="container-fluid copyright py-4">
@@ -856,7 +881,7 @@
 
 
         <!-- Back to Top -->
-        <a href="#home" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#home" class="btn btn-primary btn-lg-square rounded-circle back-to-top" style="width: 51px;"><i class="fa fa-arrow-up"></i></a>   
 
         
     <!-- JavaScript Libraries -->
