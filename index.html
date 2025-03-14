@@ -97,11 +97,13 @@
                                     <p class="mb-4 fs-5">Make a toast with your family and friends. It's never too late to have fun. Enjoy while it last...
                                     </p>
                                     <div class="d-flex flex-shrink-0">
-                                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="service.html">Our Packages</a>
+                                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="javascript:void(0);" onclick="openBookingForm()">Book Now</a>
+
                                     </div>
                                 </div>
                             </div>
-                           <!-- Booking Form Overlay -->
+                            
+                        <!-- Booking Form Overlay -->
 <div class="booking-overlay" id="bookingOverlay" onclick="closeBookingForm()">
     <div class="booking-container" id="bookingContainer" onclick="event.stopPropagation();">
         <span class="close-btn" onclick="closeBookingForm()">×</span>
@@ -366,6 +368,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+
+<style>
+    .booking-container {
+        width: 100%;
+        max-width: 400px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .total-container {
+        display: flex;
+        justify-content: space-between;
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #007bff;
+    }
+    .btn-primary {
+        
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+</style>
+
         <!-- Carousel End -->
 </section> 
         
@@ -378,6 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         <!-- Feature Start -->
+        <div class="feature" style="padding: 20px;">
         <div class="container-fluid feature py-5">
             <div class="container py-5">
                 <div class="row g-4">
@@ -425,6 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- Feature End -->
 <section class="aboutsection" id="about">
