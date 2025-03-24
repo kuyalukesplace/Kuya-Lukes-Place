@@ -1,7 +1,6 @@
 @import url('https://cdn.tailwindcss.com');
 
 /*** Spinner Start ***/
-/*** Spinner ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -161,16 +160,16 @@
 
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
-    display: block;
-    visibility: hidden;
-    top: 100%;
-    transform: rotateX(-75deg);
-    transform-origin: 0% 0%;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 8px !important;
-    transition: .5s;
-    opacity: 0;
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        border-radius: 10px;
+        margin-top: 8px !important;
+        transition: .5s;
+        opacity: 0;
     }
 }
 
@@ -192,7 +191,6 @@
     object-fit: cover;
 }
 
-
 @media (min-width: 1200px) {
     .header-carousel .header-carousel-item,
     .header-carousel .header-carousel-item img {
@@ -203,7 +201,7 @@
 @media (max-width: 1199px) {
     .header-carousel .header-carousel-item,
     .header-carousel .header-carousel-item img {
-        height: 1200px;
+        height: 100vh;
     }
 }
 
@@ -217,7 +215,6 @@
     height: 60px;
     bottom: -60px;
     right: 50%;
-   
     margin-right: -60px;
     border-radius: 60px;
     background: var(--bs-primary);
@@ -226,8 +223,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
+
 .header-carousel .owl-nav .owl-next:hover {
     box-shadow: inset 0 0 100px 0 var(--bs-light);
     color: var(--bs-primary);
@@ -240,7 +237,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 @keyframes carousel-next-btn {
@@ -276,13 +272,9 @@
 
 @keyframes image-zoom {
     0%  {width: 100%; height: 100%;}
-
     25% {width: 115%; height: 115%;}
-
     50% {width: 130%; height: 130%;}
-
     75% {width: 120%; height: 120%;}
-
     100% {width: 100%; height: 100%;}
 }
 /*** Carousel Hero Header End ***/
@@ -295,7 +287,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 0 60px 0;
+    padding: 60px 0;
     transition: 0.5s;
 }
 
@@ -307,7 +299,6 @@
     color: var(--bs-white);
 }
 /*** Single Page Hero Header End ***/
-
 
 /*** Feature Start ***/
 .feature .feature-item {
@@ -327,16 +318,14 @@
     background: rgba(0, 0, 0, 0.22);
     border-radius: 10px;
     z-index: 2;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
-
 
 .feature-item .feature-content .feature-content-inner {
     position: relative;
     z-index: 5;
 }
 /*** Feature End ***/
-
 
 /*** Service Start ***/
 .service {
@@ -346,7 +335,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 .service::before {
     content: "";
@@ -358,7 +346,6 @@
     z-index: 1;
 }
 
-
 .service .service-section {
     position: relative;
     z-index: 5;
@@ -369,11 +356,9 @@
     width: 100%;
     height: 100%;
     padding: 70px;
-    
 }
 
-
-.service-days .p-4{
+.service-days .p-4 {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -382,18 +367,17 @@
     margin: 10;
     background-color: #ffffff;
 }
+
 .service .service-days {
     border-radius: 10px;
     background: #ffffff;
-
 }
+
 .service .service-item {
     position: relative;
     height: 100%;
     text-align: center;
-  
     background: #ffffff;
-
     z-index: 1;
 }
 
@@ -422,11 +406,12 @@
 .service .service-item:hover i {
     color: var(--bs-white);
 }
+
 .service-item:hover {
-    transform: scale(1.1); /* Mag-zoom in ng kaunti ang elemento */
-    transition: transform 0.3s ease; /* Smooth transition */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Mas malalim na shadow */
-    background-color: #f8f9fa; /* Magdagdag ng light background color */
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    background-color: #f8f9fa;
 }
 
 .service .service-item .service-content {
@@ -451,46 +436,21 @@
 }
 /*** Service End ***/
 
-/*** Pricing Start***/
-/**.service-itim {
-    position: relative;
-    height:95%;
-    width: 70%;
+/*** Pricing Start ***/
+.service-itim {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    border-radius: 10px;
-    background: rgb(227, 227, 227);
-    padding: 20px;
-    transition: 0.3s;
-    z-index: 1;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
 }
-**/
+
 .service-itim:hover {
-    background: rgb(200, 200, 200); /* Slightly darker on hover */
+    background: rgb(200, 200, 200);
     transform: scale(1.05);
 }
-
-.service-itim {
-    display: flex;
-    justify-content: space-between; /* Distribute items evenly */
-    align-items: center; /* Align items vertically at the center */
-    gap: 10px; /* Adds space between the items */
-    padding: 10px;
-    border: 1px #ccc;
-}
-
-
-.service-itim {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    flex: 1; /* Make all items flexible */
-    
-  }
-/*** Pricing End ***/
 
 /*** Attractions Start ***/
 .attractions {
@@ -519,13 +479,9 @@
 
 @keyframes attraction-image-zoom {
     0%  {width: 100%;}
-
     25% {width: 115%;}
-
     50% {width: 130%;}
-
     75% {width: 120%;}
-
     100% {width: 100%;}
 }
 
@@ -617,7 +573,6 @@
     color: var(--bs-primary);
 }
 /*** Attractions End ***/
-
 
 /*** Gallery Start ***/
 .gallery .gallery-item {
@@ -746,14 +701,12 @@
     background: var(--bs-dark);
     transition: 0.5s;
     z-index: 1;
-
-       
 }
 
 .team .team-item:hover:after {
     height: 100%;
-    transform: scale(1.1); /* Mag-zoom in ng kaunti ang elemento */
-    transition: transform 0.3s ease; /* Smooth transition */
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .team .team-item .team-content {
@@ -773,7 +726,7 @@
 .team .team-item .team-content p {
     transition: 0.5s;
 }
-S
+
 .team {
     background: white;
     padding: 20px;
@@ -783,6 +736,7 @@ S
     position: relative;
     overflow: hidden;
 }
+
 .team img {
     width: 100px;
     height: 100px;
@@ -790,18 +744,19 @@ S
     margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
+
 .social-icons {
-position: absolute;
-top: 10%;
-left: 130%;
-transform: translateY(-50%);
-display: flex;
-gap: 10px;
-transition: left 0.3s ease;
+    position: absolute;
+    top: 10%;
+    left: 130%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    transition: left 0.3s ease;
 }
 
 .team:hover .social-icons {
-left: 70%;
+    left: 70%;
 }
 
 .social-icons a {
@@ -812,12 +767,15 @@ left: 70%;
     border-radius: 20%;
     font-size: 16px;
 }
+
 .team:hover img {
     transform: scale(1.1);
 }
+
 .team:hover .social-icons {
     transform: translate(-50%, -50%) scale(1);
 }
+
 .team .team-item:hover .team-content h4 {
     color: var(--bs-primary);
 }
@@ -964,26 +922,13 @@ left: 70%;
     justify-content: center;
 }
 
-.testimonial-carousel .owl-nav .owl-prev {
-    font-size: 50px;
-    margin-right: 80px;
-    color: var(--bs-white);
-    transition: 0.5s;
-}
 
-.testimonial-carousel .owl-nav .owl-next {
-    font-size: 50px;
-    margin-left: 80px;
-    color: var(--bs-white);
-    transition: 0.5s;
-}
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
     color: var(--bs-primary);
 }
 /*** Testimonial End ***/
-
 
 /*** Footer Start ***/
 .footer {
@@ -1042,32 +987,33 @@ left: 70%;
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
 body {
-  background: #eee;
-  padding: 0 0px;
+    background: #eee;
+    padding: 0;
 }
+
 h1 {
-    padding-bottom: 0px;
+    padding-bottom: 0;
     font-family: Montserrat;
     font-weight: 700;
     color: #323232;
- 
-    margin-top: 45px
+    margin-top: 45px;
 }
 
 .h1, .ok {
-text-align: center;
+    text-align: center;
 }
 
 .card {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.03);
-  border-right: 1px #dde0e2 solid;
-  border-radius: 4px 4px 0 0;
-  position: relative;
-  background-color: white;
-  color: #56575b;
-  margin: 5px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.03);
+    border-right: 1px #dde0e2 solid;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    background-color: white;
+    color: #56575b;
+    margin: 5px 0;
+}
 
-  .plan-name {
+.plan-name {
     padding: 13px 0;
     border-bottom: 1px #eff0f2 solid;
     text-align: center;
@@ -1076,43 +1022,43 @@ text-align: center;
     color: #464c50;
     font-family: "Open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
-  }
+}
 
-  .plan-description {
+.plan-description {
     padding: 15px;
     line-height: normal;
     min-height: 175px;
     font-size: 14px;
     line-height: 18px;
-  }
+}
 
-  .plan-price sub {
+.plan-price sub {
     text-transform: none;
     font-size: 16px;
     bottom: 0;
-  }
+}
 
-  .plan-price {
+.plan-price {
     color: #56575b;
     font-family: "Open sans";
     font-size: 34px;
     text-transform: uppercase;
     line-height: 50px;
-  }
+}
 
-  sub {
+sub {
     font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
-  }
+}
 
-  .plan-description.specs {
+.plan-description.specs {
     min-height: 200px;
     line-height: 20px;
-  }
+}
 
-  .plan-cta {
+.plan-cta {
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -1120,14 +1066,10 @@ text-align: center;
     text-align: center;
     padding: 0 15px;
     min-height: 95px;
-    &:hover a {
-      opacity: 0.8;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-  .button,
-  .button-primary {
+}
+
+.button,
+.button-primary {
     background: #2a5bd7;
     border-radius: 8px;
     font-size: inherit;
@@ -1137,7 +1079,47 @@ text-align: center;
     line-height: normal;
     outline: none !important;
     padding: 0.6em 1em;
-  }
 }
 
-/** wala **/
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        margin-left: 0;
+    }
+
+    .header-carousel .header-carousel-item img {
+        height: auto; /* Make images responsive */
+    }
+
+    .team {
+        width: 90%; /* Make team cards responsive */
+    }
+
+    .service-item {
+        margin-bottom: 20px; /* Add spacing between service items */
+    }
+
+    .footer {
+        text-align: center; /* Center footer items on mobile */
+    }
+
+    .total-container {
+        flex-direction: column; /* Stack total display on mobile */
+        align-items: flex-start;
+    }
+
+    .total-label {
+        margin-bottom: 5px; /* Add spacing for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .team {
+        width: 300px; /* Fixed width for larger screens */
+    }
+}
