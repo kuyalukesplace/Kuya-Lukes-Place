@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,11 +46,12 @@
         <div class="container-fluid nav-bar sticky-top px-4 py-2 py-lg-0">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="display-6 text-dark" style="margin-top: 15px"> <img src="img/klp logo.jpg" alt="Logo" style=" margin-right:10px; "></i>Kuya Luke's Place</h1>
+                    <h1 class="display-6 text-dark d-flex" style="margin-top: 15px"> <img src="img/klp logo.jpg" alt="Logo" style=" margin-right:10px; "></i>
+                        <span class="navbar-title d-none d-xl-block">Kuya Luke's Place</span>
+                    </h1>
                  
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="    margin-left: 333px;
-                margin-top: -18%;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-top: 10px" >
@@ -104,99 +106,101 @@
                             </div>
                             
                         <!-- Booking Form Overlay -->
-<div class="booking-overlay" id="bookingOverlay" onclick="closeBookingForm()">
-    <div class="booking-container" id="bookingContainer" onclick="event.stopPropagation();">
-        <span class="close-btn" onclick="closeBookingForm()">×</span>
-        <h2 class="text-center text-uppercase mb-4" style="margin-top: -11%;">Book Now</h2>
-
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="d1cb4a45-dca5-47d5-bb25-4744b9df69f2">
-
-            <div class="mb-3">
-                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="mb-3">
-                <input type="tel" class="form-control" name="phone" placeholder="Phone" required onkeypress="return isNumber(event)">
-            </div>
-
-            <div class="mb-3">
-                <select class="form-select" id="packageSelect" name="package" required onchange="updateTotal()">
-                    <option value="" selected disabled>Select Package</option>
-                    <option value="DAYTOUR" data-price="4488">DAYTOUR - ₱4,488</option>
-                    <option value="OVERNIGHT" data-price="5488">OVERNIGHT - ₱5,488</option>
-                    <option value="NIGHT TOUR" data-price="2888">NIGHT TOUR - ₱2,888</option>
-                    <option value="SUPER ALL-IN" data-price="17488">SUPER ALL-IN - ₱17,488</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label class="fw-bold" style="color: black;">Add-ons</label>
-                <div class="form-check">
-                    <input class="form-check-input addon" type="checkbox" value="1998" data-name="1 ROOM" onchange="updateTotal()"> 
-                    <span style="color: black;">1 Room - ₱1,998</span>
+    <div class="booking-overlay" id="bookingOverlay" onclick="closeBookingForm()">
+        <div class="booking-container" id="bookingContainer" onclick="event.stopPropagation();">
+            <span class="booking-modal-header d-flex justify-content-between mb-4">
+                <h2 class="text-center text-uppercase">Book Now</h2>
+                <span class="close-btn text-dark" onclick="closeBookingForm()">×</span>
+            </span>
+    
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="d1cb4a45-dca5-47d5-bb25-4744b9df69f2">
+    
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input addon" type="checkbox" value="3988" data-name="2 ROOMS" onchange="updateTotal()"> 
-                    <span style="color: black;">2 Rooms - ₱3,988</span>
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input addon" type="checkbox" value="1488" data-name="KTV" onchange="updateTotal()"> 
-                    <span style="color: black;">KTV - ₱1,488</span>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" name="phone" placeholder="Phone" required onkeypress="return isNumber(event)">
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input addon" type="checkbox" value="400" data-name="PROPANE TANK" onchange="updateTotal()"> 
-                    <span style="color: black;">Propane Tank - ₱400</span>
+    
+                <div class="mb-3">
+                    <select class="form-select" id="packageSelect" name="package" required onchange="updateTotal()">
+                        <option value="" selected disabled>Select Package</option>
+                        <option value="DAYTOUR" data-price="4488">DAYTOUR - ₱4,488</option>
+                        <option value="OVERNIGHT" data-price="5488">OVERNIGHT - ₱5,488</option>
+                        <option value="NIGHT TOUR" data-price="2888">NIGHT TOUR - ₱2,888</option>
+                        <option value="SUPER ALL-IN" data-price="17488">SUPER ALL-IN - ₱17,488</option>
+                    </select>
                 </div>
-            </div>
-
-            <div class="mb-3">
-                <input class="form-control" type="date" name="date" id="datePicker" placeholder="Date" required>
-            </div>
-
-            <div class="mb-3">
-                <select class="form-select" id="number" name="guests" required onchange="updateTotal()">
-                    <option value="" disabled selected>Number of Guests</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <select class="form-select" id="numberofguest" name="Added Guests" required onchange="updateTotal()">
-                    <option value="0" disabled selected>Add Guests</option>
-                    <option value="1" data-price="248">1 Guest - ₱248</option>
-                    <option value="2" data-price="496">2 Guests - ₱496</option>
-                    <option value="3" data-price="744">3 Guests - ₱744</option>
-                    <option value="4" data-price="992">4 Guests - ₱992</option>
-                    <option value="5" data-price="1240">5 Guests - ₱1240</option>
-                </select>
-            </div>
-
-            <div class="mb-3 total-container">
-                <span>Total:</span>
-                <input type="text" class="total-input" name="total" id="totalAmount" placeholder="₱0.00" readonly>
-                <input type="hidden" id="total_hidden">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Book Now</button>
-        </form>
+    
+                <div class="mb-3">
+                    <label class="fw-bold" style="color: black;">Add-ons</label>
+                    <div class="form-check">
+                        <input class="form-check-input addon" type="checkbox" value="1998" data-name="1 ROOM" onchange="updateTotal()"> 
+                        <span style="color: black;">1 Room - ₱1,998</span>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input addon" type="checkbox" value="3988" data-name="2 ROOMS" onchange="updateTotal()"> 
+                        <span style="color: black;">2 Rooms - ₱3,988</span>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input addon" type="checkbox" value="1488" data-name="KTV" onchange="updateTotal()"> 
+                        <span style="color: black;">KTV - ₱1,488</span>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input addon" type="checkbox" value="400" data-name="PROPANE TANK" onchange="updateTotal()"> 
+                        <span style="color: black;">Propane Tank - ₱400</span>
+                    </div>
+                </div>
+    
+                <div class="mb-3">
+                    <input class="form-control" type="date" name="date" id="datePicker" placeholder="Date" required>
+                </div>
+    
+                <div class="mb-3">
+                    <select class="form-select" id="number" name="guests" required onchange="updateTotal()">
+                        <option value="" disabled selected>Number of Guests</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>
+    
+                <div class="mb-3">
+                    <select class="form-select" id="numberofguest" name="Added Guests" required onchange="updateTotal()">
+                        <option value="0" disabled selected>Add Guests</option>
+                        <option value="1" data-price="248">1 Guest - ₱248</option>
+                        <option value="2" data-price="496">2 Guests - ₱496</option>
+                        <option value="3" data-price="744">3 Guests - ₱744</option>
+                        <option value="4" data-price="992">4 Guests - ₱992</option>
+                        <option value="5" data-price="1240">5 Guests - ₱1240</option>
+                    </select>
+                </div>
+    
+                <div class="mb-3 total-container">
+                    <span>Total:</span>
+                    <input type="text" class="total-input" name="total" id="totalAmount" placeholder="₱0.00" readonly>
+                    <input type="hidden" id="total_hidden">
+                </div>
+    
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+        </div>
     </div>
-</div>
 
                             
                             <!-- CSS for Animation -->
@@ -204,10 +208,8 @@
                             /* Booking Overlay */
 .booking-overlay {
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
-    height: 120vh; /* Full screen height */
    
     display: flex;
     justify-content: center;
@@ -228,18 +230,19 @@
     width: 80%; /* Make the form wider */
     max-width: 800px; /* Limit max width */
     max-height: 90vh; /* Prevent it from overflowing the screen */
-   
+    min-height: max-content;
     transform: translateY(50px);
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    height: 77%;
-    margin-bottom: 22%;
 }
 
 /* When active, show overlay */
 .booking-overlay.active {
     opacity: 1;
     visibility: visible;
+    scale: 0.92;
+    margin: 10px, 0, 0, 0;
+    z-index: 99999;
 }
 
 /* When active, slide up the form */
@@ -918,6 +921,52 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         </div>
                     </div>
+                    <div class="testimonial-item p-4">
+                        <p class="text-white fs-4 mb-4">Pasok sa budget at sulit na sulit! Malawak yung space and malaki ang pool. Sarap sana magswimming ulit wala pa laang time. Highly recommended!💯😁
+                        </p>
+                        <div class="testimonial-inner">
+                            <div class="testimonial-img">
+                                <img src="img/yene.jpg" class="img-fluid" alt="Image">
+                                <div class="testimonial-quote btn-lg-square rounded-circle"><i class="fa fa-quote-right fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="ms-4">
+                                <h4>Ayene Reitziele Nobleta</h4>
+                                                         <div class="d-flex text-primary">
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;" ></i>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item p-4">
+                        <p class="text-white fs-4 mb-4">This is a venue where you can enjoy your family bonding, barkada bonding or any loved one's precious time. A very relaxing place. kaya try nyo n dn.
+                        </p>
+                        <div class="testimonial-inner">
+                            <div class="testimonial-img">
+                                <img src="img/flor.jpg" class="img-fluid" alt="Image">
+                                <div class="testimonial-quote btn-lg-square rounded-circle"><i class="fa fa-quote-right fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="ms-4">
+                                <h4>Flor Olea Ona</h4>
+                                                         <div class="d-flex text-primary">
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;"></i>
+                                    <i class="fas fa-star" style="color: gold;" ></i>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
