@@ -89,10 +89,7 @@
         loop: true,
         margin: 25,
         nav : true,
-        navText : [
-            '<i class="fa fa-angle-right"></i>',
-            '<i class="fa fa-angle-left"></i>'
-        ],
+ 
         responsiveClass: true,
         responsive: {
             0:{
